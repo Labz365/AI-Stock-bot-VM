@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/Scripts/python.exe -c ':*)",
+      "Bash(\".venv/Scripts/python.exe\" -c \"import matplotlib; print\\(matplotlib.__version__\\)\")",
+      "Bash(\".venv/Scripts/python.exe\" -c \"import yfinance; print\\('yfinance OK'\\)\")",
+      "Bash(\".venv/Scripts/python.exe\" src/retrain.py)",
+      "Bash(\".venv/Scripts/python.exe\" src/build_features.py)",
+      "Bash(ls data/*_features.csv)",
+      "Bash(\".venv/Scripts/python.exe\" src/train_model.py)",
+      "Bash(\".venv/Scripts/python.exe\" src/backtest.py)",
+      "Bash(python -c ':*)"
+    ]
+  }
+}
