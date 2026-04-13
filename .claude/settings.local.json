@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\".venv/Scripts/python.exe\" -c \"import sys; sys.path.insert\\(0,'src'\\); from features import compute_technical_features, DROP_FROM_MODEL; print\\('features.py OK'\\)\")",
+      "Bash(.venv/Scripts/python.exe -c ':*)",
+      "Bash(python src/test_t212.py)",
+      "Bash(pip install:*)",
+      "Bash(python -c ':*)",
+      "Bash(.venv/Scripts/python -c \"import PIL; print\\('Pillow OK'\\)\")",
+      "Bash(.venv/Scripts/python -c \"import src.gui\")"
+    ]
+  }
+}
