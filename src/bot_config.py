@@ -4,6 +4,10 @@ All strategy parameters live here. Imported by every other module.
 Run `python src/retrain.py` after changing TARGET_DAYS or TARGET_GAIN_PCT.
 """
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 # ===== BAR SIZE =====
 # '1d'  → daily bars,   run once per day
 # '1h'  → hourly bars,  run every 30-60 min during market hours (9:30–16:00 ET)
@@ -56,8 +60,8 @@ BACKTEST_INITIAL_CAPITAL = 100_000
 BACKTEST_TRAIN_SPLIT     = 0.80    # models trained on first 80%, backtest on last 20%
 
 # ===== TRADING 212 =====
-T212_API_KEY   = '47031985ZDbRWZmTBYCTaVLRIUcFQEwbIDMzN'   # Settings → API → Generate key
-T212_DEMO      = False                       # True = demo account, False = live (real money!)
+T212_API_KEY   = os.getenv("T212_API_KEY", "")
+T212_DEMO      = os.getenv("T212_DEMO", "false").lower() in ("true", "1", "yes")
 
 # Execution mode:
 #   'PIE'    → create/update a T212 Pie weighted by Kelly confidence (recommended for testing)
