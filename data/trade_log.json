@@ -829,21 +829,5 @@
         "confidence": 0.6341
       }
     ]
-  },
-  {
-    "timestamp": "2026-02-13T15:58:35.619349",
-    "cash": "95142.49",
-    "portfolio_value": "99915.05",
-    "signals": {
-      "AAPL": "HOLD",
-      "GOOGL": "HOLD",
-      "AMZN": "BUY",
-      "NVDA": "HOLD"
-    },
-    "trades": [
-      {
-        "timestamp": "2026-02-13T15:58:34.431472",
-        "ticker": "AAPL",
-        "signal": "HOLD",
-        "action": "SKIP (no position, no buy signal)",
-        "confidence": 
+  }
+]
