@@ -1,8 +1,12 @@
+import os
 from alpaca_trade_api import REST
+from dotenv import load_dotenv
 
-API_KEY = 'PKN2R4LPTH6XG66ITI6M526VGW'
-SECRET_KEY = 'BNkJBThNNbRR9iHETmWjHnJe3uJgp3bxhDNLeiD2ZwdY'
-BASE_URL = 'https://paper-api.alpaca.markets'
+load_dotenv()
+
+API_KEY = os.environ['API_KEY']
+SECRET_KEY = os.environ['SECRET_KEY']
+BASE_URL = os.environ.get('BASE_URL', 'https://paper-api.alpaca.markets')
 
 api = REST(API_KEY, SECRET_KEY, BASE_URL, api_version='v2')
 
@@ -19,4 +23,3 @@ if __name__ == '__main__':
             print(f"Position: {p.symbol} | {p.qty} shares | P/L: ${p.unrealized_pl}")
     else:
         print("No open positions")
-        
